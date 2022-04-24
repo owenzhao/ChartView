@@ -103,8 +103,8 @@ public struct LineChartView: View {
                          frame: .constant(geometry.frame(in: .local)),
                          touchLocation: self.$touchLocation,
                          showIndicator: self.$showIndicatorDot,
-                         minDataValue: .constant(nil),
-                         maxDataValue: .constant(nil)
+                         minDataValue: nil,
+                         maxDataValue: nil
                     )
                 }
                 .frame(width: frame.width, height: frame.height)

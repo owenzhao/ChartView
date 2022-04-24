@@ -115,8 +115,8 @@ public struct MultiLineChartView: View {
                                  frame: .constant(geometry.frame(in: .local)),
                                  touchLocation: self.$touchLocation,
                                  showIndicator: self.$showIndicatorDot,
-                                 minDataValue: .constant(self.globalMin),
-                                 maxDataValue: .constant(self.globalMax),
+                                 minDataValue: self.globalMin,
+                                 maxDataValue: self.globalMax,
                                  showBackground: false,
                                  gradient: self.data[i].getGradient(),
                                  index: i)
