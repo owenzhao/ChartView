@@ -31,15 +31,23 @@ public struct Line: View {
         var min: Double?
         var max: Double?
         let points = self.data.onlyPoints()
-        if minDataValue != nil && maxDataValue != nil {
-            min = minDataValue!
-            max = maxDataValue!
-        }else if let minPoint = points.min(), let maxPoint = points.max(), minPoint != maxPoint {
+        
+        if let minDataValue = minDataValue {
+            min = minDataValue
+        } else if let minPoint = points.min() {
             min = minPoint
+        }
+        
+        if let maxDataValue = maxDataValue {
+            max = maxDataValue
+        } else if let maxPoint = points.max() {
             max = maxPoint
-        }else {
+        }
+        
+        if min == nil || max == nil || min == max {
             return 0
         }
+
         if let min = min, let max = max, min != max {
             if (min <= 0){
                 return (frame.size.height-padding) / CGFloat(max - min)
