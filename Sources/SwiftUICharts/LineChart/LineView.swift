@@ -26,8 +26,8 @@ public struct LineView: View {
     @State private var currentDataNumber: Double = 0
     @State private var hideHorizontalLines: Bool = false
     
-    @State var minDataValue:Double?
-    @State var maxDataValue:Double?
+    @State public var minDataValue:Double?
+    @State public var maxDataValue:Double?
     
     public init(data: [Double],
                 title: String? = nil,
