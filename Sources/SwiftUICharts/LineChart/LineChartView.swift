@@ -27,7 +27,6 @@ public struct LineChartView: View {
             if (oldValue != self.currentValue && showIndicatorDot) {
                 HapticFeedback.playSelection()
             }
-            
         }
     }
     var frame = CGSize(width: 180, height: 120)
