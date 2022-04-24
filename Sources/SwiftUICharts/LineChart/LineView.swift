@@ -28,6 +28,25 @@ public struct LineView: View {
     @State private var currentDataNumber: Double = 0
     @State private var hideHorizontalLines: Bool = false
     
+    public init(data:[Double],
+                title:String?,
+                legend:String?,
+                style:ChartStyle = Styles.lineChartStyleOne,
+                darkModeStyle:ChartStyle = Styles.lineViewDarkMode,
+                valueSpecifier: String = "%.1f",
+                legendSpecifier: String = "%.2f"
+                minDataValue:Double? = nil
+                maxDataValue:Double? = nil) {
+        self.data = ChartData(points: data)
+        self.title = title
+        self.style = style
+        self.darkModeStyle = darkModeStyle
+        self.valueSpecifier = valueSpecifier
+        self.legendSpecifier = legendSpecifier
+        self.minDataValue = minDataValue
+        self.maxDataValue = maxDataValue
+    }
+    
     public var body: some View {
         GeometryReader{ geometry in
             VStack(alignment: .leading, spacing: 8) {
