@@ -26,17 +26,15 @@ public struct LineView: View {
     @State private var currentDataNumber: Double = 0
     @State private var hideHorizontalLines: Bool = false
     
-    @State private var minDataValue:Double?
-    @State private var maxDataValue:Double?
+    @State var minDataValue:Double?
+    @State var maxDataValue:Double?
     
     public init(data: [Double],
                 title: String? = nil,
                 legend: String? = nil,
                 style: ChartStyle = Styles.lineChartStyleOne,
                 valueSpecifier: String? = "%.1f",
-                legendSpecifier: String? = "%.2f",
-                minDataValue: Double? = nil,
-                maxDataValue: Double? = nil) {
+                legendSpecifier: String? = "%.2f") {
         
         self.data = ChartData(points: data)
         self.title = title
@@ -45,9 +43,6 @@ public struct LineView: View {
         self.valueSpecifier = valueSpecifier!
         self.legendSpecifier = legendSpecifier!
         self.darkModeStyle = style.darkModeStyle != nil ? style.darkModeStyle! : Styles.lineViewDarkMode
-        
-        self.minDataValue = minDataValue
-        self.maxDataValue = maxDataValue
     }
     
     public var body: some View {
