@@ -34,8 +34,8 @@ public struct LineView: View {
                 style:ChartStyle = Styles.lineChartStyleOne,
                 darkModeStyle:ChartStyle = Styles.lineViewDarkMode,
                 valueSpecifier: String = "%.1f",
-                legendSpecifier: String = "%.2f"
-                minDataValue:Double? = nil
+                legendSpecifier: String = "%.2f",
+                minDataValue:Double? = nil,
                 maxDataValue:Double? = nil) {
         self.data = ChartData(points: data)
         self.title = title
